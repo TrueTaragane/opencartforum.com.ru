@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новые расширения OpenCart Club | Opencart Клуб</title>
+    <meta name="description" content="Будьте в курсе последних обновлений расширений и модулей для Opencart с сайта opencart.club/files/. Все для успешного развития вашего интернет-магазина на Opencart.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --text-color: #1e293b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --hover-color: #1d4ed8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            padding-top: 5rem; /* For fixed navbar */
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-bg);
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--hover-color);
+            border-color: var(--hover-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+
+        .footer-custom {
+            background-color: var(--text-color);
+            color: white;
+        }
+
+        /* Общие стили для карточек (применяются как к новостям, так и к модулям) */
+        .rss-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem; /* Отступ между карточками в колонке */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex; /* Для Flexbox */
+            flex-direction: column; /* Элементы внутри будут располагаться вертикально */
+            overflow: hidden; /* Чтобы содержимое, выходящее за рамки, обрезалось */
+            height: 100%; /* Гарантирует одинаковую высоту карточек в ряду */
+        }
+
+        .rss-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .rss-item h3 {
+            font-size: 1.25rem; /* Уменьшен размер шрифта для компактности */
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            max-height: 3.9em; /* Ограничивает высоту заголовка примерно до 3 строк */
+            overflow: hidden; /* Обрезает текст */
+            text-overflow: ellipsis; /* Добавляет многоточие */
+        }
+
+        .rss-item h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .rss-item h3 a:hover {
+            color: var(--hover-color);
+        }
+
+        .rss-item p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            flex-grow: 1; /* Позволяет параграфу занимать всё доступное место */
+            max-height: 8em; /* Ограничивает высоту описания (примерно 5-6 строк) */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+        }
+
+        /* Стиль для изображений внутри карточек (как новостей, так и модулей) */
+        .rss-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 0.5rem;
+            object-fit: contain;
+            max-height: 150px; /* Ограничивает высоту изображения для единообразия */
+        }
+
+        .rss-item .item-meta {
+            font-size: 0.875rem;
+            color: var(--secondary-color);
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Используем mt-auto в разметке для прижатия к низу */
+        }
+        .rss-item .item-meta .source {
+            font-weight: 600;
+        }
+
+        /* Специфичные стили для модулей (цены, стикеры) */
+        .rss-item .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+            display: flex; /* Используем flexbox для размещения цен в одну строку */
+            justify-content: center; /* Центрируем цены */
+            align-items: baseline; /* Выравниваем по базовой линии */
+        }
+        .rss-item .price .price-new {
+            color: var(--primary-color);
+        }
+        .rss-item .price .price-old {
+            color: var(--secondary-color);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        /* Стили для новых элементов (рейты, покупки, скачивания) */
+        .extension-stats {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+        }
+        .extension-stats p {
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+         .list-unstyled li a::before {
+             content: "» "; /* Вы можете заменить "» " на любой другой символ или текст, например "• ", "→ ", "⭐ " и т.д. */
+             color: #fff; /* Цвет символа */
+             margin-right: 5px; /* Отступ справа от символа до текста ссылки */
+         }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary-custom" href="index.html">
+                <i class="fas fa-shopping-cart me-2"></i>Opencart Клуб
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">О группе</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#benefits">Преимущества</a>
+                    </li>
+<!--                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#how-it-works">Как это работает</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="index.html#join" class="btn btn-primary-custom ms-2">Вступить в Клуб</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="checker.html" class="btn btn-primary-custom ms-2">Проверить сайт</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10 text-center">
+                    <h1 class="h1 fw-bold mb-4">
+                        <i class="fas fa-plus-circle me-2 text-primary-custom"></i>
+                        Новые расширения с OpenCart Club
+                    </h1>
+                    <p class="lead text-secondary">
+                        Будьте в курсе последних новинок модулей и шаблонов для Opencart с сайта <a href="https://opencart.club/files/" target="_blank" class="text-primary-custom fw-bold">OpenCart Club</a>.
+                        Здесь вы найдете актуальные решения для вашего интернет-магазина.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div id="extensions-container" class="row">
+                        <div class="text-center my-5" id="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Загрузка расширений...</span>
+                            </div>
+                            <p class="mt-3 text-secondary">Загрузка последних расширений с OpenCart Club...</p>
+                        </div>
+                        <div id="error-message" class="alert alert-danger text-center" style="display: none;"></div>
+                        <div id="no-results" class="no-results" style="display: none;">Пока нет новых расширений для отображения.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-custom py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-shopping-cart me-2"></i>
+                        <span class="fw-bold">Opencart Клуб</span>
+                    </div>
+                    <p class="text-light opacity-75">
+Opencart Клуб — это не просто сообщество, а полноценная экосистема для всех, кто развивает свой бизнес на платформе Opencart. Мы объединяем владельцев интернет-магазинов, разработчиков и специалистов по электронной коммерции, предлагая площадку для активного обмена знаниями и опытом. С 2020 года мы помогаем друг другу решать возникающие трудности, обсуждать новые тренды и находить эффективные решения для роста онлайн-проектов. Присоединяйтесь к нам, чтобы всегда быть в курсе последних обновлений, получать экспертные советы и развивать свой магазин вместе с нами.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-light mb-3">Полезные ссылки:</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/opencart_club.html" class="text-light opacity-75 text-decoration-none">Opencart Club</a></li>
+                        <li><a href="/liveopencart_news.html" class="text-light opacity-75 text-decoration-none">Liveopencart</a></li>
+                        <li><a href="/opencart-russia.html" class="text-light opacity-75 text-decoration-none">OpencartRussia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="text-light opacity-75 mb-0">
+                        © 2025 Opencart Клуб. Все права защищены.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navigation links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                }
+            });
+
+            // Navbar background change on scroll
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar-custom').addClass('shadow-sm');
+                } else {
+                    $('.navbar-custom').removeClass('shadow-sm');
+                }
+            });
+
+            // Function to load and display extensions from opencart.club
+            function loadExtensions(parserUrl, containerId) {
+                const loadingSpinner = $('#loading-spinner');
+                const errorMessageDiv = $('#error-message');
+                const noResultsDiv = $('#no-results');
+                const extensionsContainer = $('#' + containerId);
+
+                loadingSpinner.show();
+                errorMessageDiv.hide();
+                noResultsDiv.hide();
+                extensionsContainer.empty(); // Очищаем контейнер перед загрузкой
+
+                $.ajax({
+                    url: parserUrl,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        loadingSpinner.hide();
+
+                        if (response.error) {
+                            errorMessageDiv.text('Ошибка при парсинге: ' + response.error).show();
+                            console.error('Parser error:', response.error);
+                            return;
+                        }
+
+                        if (response.length === 0) {
+                            noResultsDiv.show();
+                            return;
+                        }
+
+                        let output = '';
+                        response.forEach(function(ext) {
+                            let imageUrl = ext.image_url;
+                            if (imageUrl.startsWith('//')) {
+                                imageUrl = 'https:' + imageUrl; // Add protocol if missing
+                            }
+
+                            let priceHtml = ''; // Объявляем priceHtml один раз здесь
+                            if (ext.price) {
+                                if (ext.price.old_price && ext.price.new_price) {
+                                    priceHtml = `<span class="price-old">${ext.price.old_price}</span> <span class="price-new">${ext.price.new_price}</span>`;
+                                } else if (ext.price.price && ext.price.price !== 'N/A') {
+                                    priceHtml = `<span class="price-new">${ext.price.price}</span>`;
+                                } else {
+                                    priceHtml = `<span class="price-new">N/A</span>`; // If price is 'N/A'
+                                }
+                            }
+
+                            output += `
+                                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                    <div class="rss-item h-100">
+                                        <div class="image text-center">
+                                            <a href="${ext.url}" target="_blank">
+                                                <img src="${imageUrl}" alt="${ext.title || 'Изображение расширения'}" class="img-fluid">
+                                            </a>
+                                        </div>
+                                        <h3><a href="${ext.url}" target="_blank">${ext.title}</a></h3>
+                                        <p class="text-secondary">Автор: ${ext.author}</p>
+                                        <div class="extension-stats">
+                                            <p>Рейтинг: ${'⭐'.repeat(ext.rating)} (${ext.rating}/5)</p>
+                                            <p>Покупки: ${ext.purchases}</p>
+                                            <p>Скачивания: ${ext.downloads}</p>
+                                        </div>
+                                        <div class="price mt-auto pt-3">
+                                            ${priceHtml}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        extensionsContainer.html(output);
+                    },
+                    error: function(xhr, status, error) {
+                        loadingSpinner.hide();
+                        let errorMessage = 'Произошла ошибка при запросе данных. Проверьте путь к файлу opencart_club_parser.php и логи сервера.';
+                        if (status === 'parsererror') {
+                            errorMessage = 'Ошибка парсинга ответа от PHP-скрипта. Возможно, PHP-скрипт не вернул корректный JSON. Проверьте его вывод напрямую в браузере.';
+                        } else if (status === 'timeout') {
+                            errorMessage = 'Таймаут запроса. Сервер слишком долго отвечал.';
+                        } else if (xhr.status === 404) {
+                            errorMessage = 'Файл парсера не найден (404 Not Found). Убедитесь, что "opencart_club_parser.php" находится по правильному пути.';
+                        } else {
+                            errorMessage = `AJAX Error: ${status} - ${error}. Статус: ${xhr.status}. Проверьте консоль для подробностей.`;
+                        }
+                        errorMessageDiv.text(errorMessage).show();
+                        console.error('AJAX Error:', status, error);
+                        console.error('XHR Object:', xhr);
+                    }
+                });
+            }
+
+            // Load extensions on page load
+            loadExtensions('opencart_club_parser.php', 'extensions-container'); // Убедитесь, что это правильный путь
+        });
+    </script>
+</body>
+</html>

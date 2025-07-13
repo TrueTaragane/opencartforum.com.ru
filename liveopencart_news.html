@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости LiveOpencart: Свежие Обновления для Вашего Магазина | Opencart Клуб</title>
+    <meta name="description" content="Будьте в курсе последних новостей, обновлений и статей с LiveOpencart.ru. Все для успешного развития вашего интернет-магазина на Opencart.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --text-color: #1e293b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --hover-color: #1d4ed8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            padding-top: 5rem; /* For fixed navbar */
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-bg);
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 500;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--hover-color);
+            border-color: var(--hover-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+
+        .footer-custom {
+            background-color: var(--text-color);
+            color: white;
+        }
+
+        /* Общие стили для карточек (применяются как к новостям, так и к модулям) */
+        .rss-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem; /* Отступ между карточками в колонке */
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex; /* Для Flexbox */
+            flex-direction: column; /* Элементы внутри будут располагаться вертикально */
+            overflow: hidden; /* Чтобы содержимое, выходящее за рамки, обрезалось */
+            height: 100%; /* Гарантирует одинаковую высоту карточек в ряду */
+        }
+
+        .rss-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .rss-item h3 {
+            font-size: 1.25rem; /* Уменьшен размер шрифта для компактности */
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            max-height: 3.9em; /* Ограничивает высоту заголовка примерно до 3 строк */
+            overflow: hidden; /* Обрезает текст */
+            text-overflow: ellipsis; /* Добавляет многоточие */
+        }
+
+        .rss-item h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .rss-item h3 a:hover {
+            color: var(--hover-color);
+        }
+
+        .rss-item p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            flex-grow: 1; /* Позволяет параграфу занимать всё доступное место */
+            max-height: 8em; /* Ограничивает высоту описания (примерно 5-6 строк) */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+        }
+
+        /* Стиль для изображений внутри карточек (как новостей, так и модулей) */
+        .rss-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 0.5rem;
+            object-fit: contain;
+            max-height: 150px; /* Ограничивает высоту изображения для единообразия */
+        }
+
+        .rss-item .item-meta {
+            font-size: 0.875rem;
+            color: var(--secondary-color);
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Используем mt-auto в разметке для прижатия к низу */
+        }
+        .rss-item .item-meta .source {
+            font-weight: 600;
+        }
+
+        /* Специфичные стили для модулей (цены, стикеры) */
+        .rss-item .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .rss-item .price .price-new {
+            color: var(--primary-color);
+        }
+        .rss-item .price .price-old {
+            color: var(--secondary-color);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .rss-item .july-stickers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+            z-index: 10;
+        }
+        .rss-item .july-stickers .sticker {
+            background-color: #ffc107; /* Примерный цвет стикера */
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .rss-item .image {
+            position: relative; /* Для позиционирования стикеров */
+        }
+         .list-unstyled li a::before {
+             content: "» "; /* Вы можете заменить "» " на любой другой символ или текст, например "• ", "→ ", "⭐ " и т.д. */
+             color: #fff; /* Цвет символа */
+             margin-right: 5px; /* Отступ справа от символа до текста ссылки */
+         }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary-custom" href="index.html">
+                <i class="fas fa-shopping-cart me-2"></i>Opencart Клуб
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">О группе</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#benefits">Преимущества</a>
+                    </li>
+<!--                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#how-it-works">Как это работает</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="index.html#join" class="btn btn-primary-custom ms-2">Вступить в Клуб</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="checker.html" class="btn btn-primary-custom ms-2">Проверить сайт</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10 text-center">
+                    <h1 class="h1 fw-bold mb-4">
+                        <i class="fas fa-newspaper me-2 text-primary-custom"></i>
+                        Новости LiveOpencart
+                    </h1>
+                    <p class="lead text-secondary">
+                        Будьте в курсе последних новостей, обновлений и статей с сайта <a href="https://liveopencart.ru/" target="_blank" class="text-primary-custom fw-bold">LiveOpencart.ru</a>.
+                        Здесь вы найдете актуальную информацию, которая поможет вам в развитии вашего интернет-магазина.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="h2 fw-bold mb-4 text-center">Последние Новости Сайта</h2>
+                    <div id="rss-feed-liveopencart">
+                        <div class="text-center my-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Загрузка новостей...</span>
+                            </div>
+                            <p class="mt-3 text-secondary">Загрузка последних новостей LiveOpencart...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-12">
+                    <h2 class="h2 fw-bold mb-4 text-center">
+                        <i class="fas fa-box-open me-2 text-primary-custom"></i>
+                        Новинки Модулей на Liveopencart.ru
+                    </h2>
+                    <div id="new-modules-container" class="row">
+                        <div class="text-center my-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Загрузка модулей...</span>
+                            </div>
+                            <p class="mt-3 text-secondary">Загрузка последних модулей LiveOpencart...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-custom py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-shopping-cart me-2"></i>
+                        <span class="fw-bold">Opencart Клуб</span>
+                    </div>
+                    <p class="text-light opacity-75">
+Opencart Клуб — это не просто сообщество, а полноценная экосистема для всех, кто развивает свой бизнес на платформе Opencart. Мы объединяем владельцев интернет-магазинов, разработчиков и специалистов по электронной коммерции, предлагая площадку для активного обмена знаниями и опытом. С 2020 года мы помогаем друг другу решать возникающие трудности, обсуждать новые тренды и находить эффективные решения для роста онлайн-проектов. Присоединяйтесь к нам, чтобы всегда быть в курсе последних обновлений, получать экспертные советы и развивать свой магазин вместе с нами.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-light mb-3">Полезные ссылки:</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/opencart_club.html" class="text-light opacity-75 text-decoration-none">Opencart Club</a></li>
+                        <li><a href="/liveopencart_news.html" class="text-light opacity-75 text-decoration-none">Liveopencart</a></li>
+                        <li><a href="/opencart-russia.html" class="text-light opacity-75 text-decoration-none">OpencartRussia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="text-light opacity-75 mb-0">
+                        © 2025 Opencart Клуб. Все права защищены.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navigation links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                }
+            });
+
+            // Navbar background change on scroll
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar-custom').addClass('shadow-sm');
+                } else {
+                    $('.navbar-custom').removeClass('shadow-sm');
+                }
+            });
+
+            // Function to load and display RSS feed
+            function loadRssFeed(feedUrl, containerId) {
+                const phpProxyUrl = 'get_rss_feed.php'; // Убедитесь, что это правильный путь
+                
+                $.ajax({
+                    url: phpProxyUrl + '?url=' + encodeURIComponent(feedUrl),
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'ok') {
+                            let output = '';
+                            response.items.forEach(function(item) {
+                                let pubDate = moment(item.pubDate).locale('ru').format('LLL');
+                                let descriptionHtml = item.description ? `<p>${item.description}</p>` : '';
+
+                                output += `
+                                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                        <div class="rss-item h-100">
+                                            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                                            ${descriptionHtml}
+                                            <div class="item-meta mt-auto pt-3">
+                                                <span>Опубликовано: ${pubDate}</span>
+                                                <span class="source">Источник: ${response.feed.title}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#' + containerId).addClass('row').html(output);
+                        } else {
+                            $('#' + containerId).html('<p class="alert alert-warning text-center">Не удалось загрузить RSS-ленту: ' + (response.message || 'Неизвестная ошибка.') + '</p>');
+                            console.error('Ошибка загрузки RSS-ленты через PHP-прокси:', response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        let errorMessage = 'Произошла ошибка при запросе к PHP-прокси. Проверьте путь к файлу get_rss_feed.php и логи сервера.';
+                        if (status === 'parsererror') {
+                            errorMessage = 'Ошибка парсинга ответа от PHP-скрипта. Возможно, PHP-скрипт не вернул корректный JSON. Проверьте его вывод напрямую в браузере.';
+                        } else if (status === 'timeout') {
+                            errorMessage = 'Таймаут запроса к PHP-прокси. Сервер слишком долго отвечал.';
+                        } else if (status === 'abort') {
+                             errorMessage = 'Запрос был отменен.';
+                        } else {
+                             errorMessage = `AJAX Error: ${status} - ${error}. Проверьте консоль для подробностей.`;
+                        }
+                        $('#' + containerId).html('<p class="alert alert-danger text-center">' + errorMessage + '</p>');
+                        console.error('AJAX Error к PHP-прокси:', status, error);
+                        console.error('XHR Object:', xhr);
+                    }
+                });
+            }
+
+            // НОВАЯ ФУНКЦИЯ: Загрузка и отображение новинок модулей
+            function loadNewModules(parserUrl, containerId) {
+                $.ajax({
+                    url: parserUrl,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'ok') {
+                            let output = '';
+                            response.products.forEach(function(product) {
+                                let priceHtml = '';
+                                if (product.price_new || product.price_old) {
+                                    priceHtml = `<div class="price">`;
+                                    if (product.price_new) {
+                                        priceHtml += `<span class="price-new">${product.price_new}</span>`;
+                                    }
+                                    if (product.price_old) {
+                                        priceHtml += `<span class="price-old">${product.price_old}</span>`;
+                                    }
+                                    priceHtml += `</div>`;
+                                }
+
+                                let stickersHtml = '';
+                                if (product.stickers && product.stickers.length > 0) {
+                                    stickersHtml = `<div class="july-stickers">`;
+                                    product.stickers.forEach(function(sticker) {
+                                        stickersHtml += `<div class="sticker">${sticker}</div>`;
+                                    });
+                                    stickersHtml += `</div>`;
+                                }
+
+                                output += `
+                                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                        <div class="rss-item h-100">
+                                            <div class="image text-center">
+                                                <a href="${product.url}" target="_blank">
+                                                    <img src="${product.image}" alt="${product.name}" class="img-fluid">
+                                                </a>
+                                                ${stickersHtml}
+                                            </div>
+                                            <h3><a href="${product.url}" target="_blank">${product.name}</a></h3>
+                                            ${priceHtml}
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#' + containerId).html(output); // 'row' класс уже на контейнере #new-modules-container
+                        } else {
+                            $('#' + containerId).html('<p class="alert alert-warning text-center">Не удалось загрузить новинки модулей: ' + (response.error || 'Неизвестная ошибка.') + '</p>');
+                            console.error('Ошибка загрузки новинок модулей:', response.error);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        let errorMessage = 'Произошла ошибка при запросе к парсеру модулей. Проверьте путь к файлу parser_live.php и логи сервера.';
+                        if (status === 'parsererror') {
+                            errorMessage = 'Ошибка парсинга ответа от PHP-скрипта. Возможно, PHP-скрипт не вернул корректный JSON. Проверьте его вывод напрямую в браузере.';
+                        } else if (status === 'timeout') {
+                            errorMessage = 'Таймаут запроса к парсеру модулей. Сервер слишком долго отвечал.';
+                        } else {
+                             errorMessage = `AJAX Error: ${status} - ${error}. Проверьте консоль для подробностей.`;
+                        }
+                        $('#' + containerId).html('<p class="alert alert-danger text-center">' + errorMessage + '</p>');
+                        console.error('AJAX Error к парсеру модулей:', status, error);
+                        console.error('XHR Object:', xhr);
+                    }
+                });
+            }
+
+            // Load content on page load
+            loadRssFeed('https://liveopencart.ru/news_site/?rss=2.0', 'rss-feed-liveopencart');
+            // Вызываем новую функцию для загрузки модулей
+            loadNewModules('parser_live.php', 'new-modules-container'); // Укажите правильный путь к parser_live.php
+        });
+    </script>
+</body>
+</html>
