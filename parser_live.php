@@ -1,18 +1,9 @@
 <?php
 
 // --- НАСТРОЙКИ КЭШИРОВАНИЯ ---
-$cacheDir = __DIR__ . '/cache/'; // Директория для кэша. Убедитесь, что она существует и доступна для записи.
-// Важно: для каждого парсера должен быть свой уникальный файл кэша.
-// Этот файл будет использоваться для парсинга "Новинок" (модулей)
-$cacheFileName = 'liveopencart_modules_cache.json'; // УНИКАЛЬНОЕ ИМЯ ФАЙЛА КЭША ДЛЯ ЭТОГО ПАРСЕРА
-$cacheFilePath = $cacheDir . $cacheFileName;
-$cacheTTL = 3 * 24 * 60 * 60; // 3 дня в секундах
-// --- КОНЕЦ НАСТРОЕК КЭШИРОВАНИЯ ---
-
-// --- НАСТРОЙКИ КЭШИРОВАНИЯ ДЛЯ RSS-ЛЕНТЫ ---
 $cacheDir = __DIR__ . '/cache/';
-$cacheFileName = 'liveopencart_news_rss_cache.json'; // УНИКАЛЬНОЕ ИМЯ ФАЙЛА КЭША ДЛЯ ЭТОЙ RSS-ЛЕНТЫ
-$cacheFilePath = $cacheDir . $cacheFileName;
+$cacheFileName_modules = 'liveopencart_modules_cache.json';
+$cacheFilePath_modules = $cacheDir . $cacheFileName_modules;
 $cacheTTL = 3 * 24 * 60 * 60; // 3 дня в секундах
 // --- КОНЕЦ НАСТРОЕК КЭШИРОВАНИЯ ---
 
@@ -177,7 +168,7 @@ function parseNewArrivals($url) {
 
 try {
     // Попытка получить данные из кэша
-    $cachedData = getCachedData($cacheFilePath, $cacheTTL);
+    $cachedData = getCachedData($cacheFilePath_modules, $cacheTTL);
 
     if ($cachedData !== false) {
         // Если данные найдены в кэше и они актуальны, отдаем их
@@ -190,7 +181,7 @@ try {
         // Если парсинг прошел успешно, сохраняем данные в кэш
         if (isset($results['status']) && $results['status'] === 'ok') {
             $jsonData = json_encode($results, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-            saveCachedData($cacheFilePath, $jsonData);
+            saveCachedData($cacheFilePath_modules, $jsonData);
             echo $jsonData;
         } else {
             // Если при парсинге произошла ошибка, выводим ее и не кэшируем

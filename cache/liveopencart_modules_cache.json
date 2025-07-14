@@ -1,0 +1,133 @@
+{
+    "status": "ok",
+    "products": [
+        {
+            "name": "SMS-уведомления от TeraSMS",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/mail-sms\/sms-uvedomleniya-ot-terasms",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/terasms_main1-220x220.jpg",
+            "price_new": "бесплатно",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Layout Pro: модули в ряд",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/vneshniy-vid\/module-layout-pro",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/layout_pro_logo1-220x220.png",
+            "price_new": "800 ₽",
+            "price_old": "1 000 ₽",
+            "stickers": []
+        },
+        {
+            "name": "Smart Recommender - Умные рекомендуемые и похожие товары для OpenCart",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/prochee\/umnyie-rekomenduemyie-i-pohojie-tovaryi-v-tovare",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/chatgptimage3.2025.20_23_26-220x220.png",
+            "price_new": "999 ₽",
+            "price_old": "3 000 ₽",
+            "stickers": []
+        },
+        {
+            "name": "Автодополнение для значений характеристик товаров",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/adminka\/avtodopolnenie-dlya-znacheniy-harakteristik-tovarov",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/preview9-220x220.png",
+            "price_new": "бесплатно",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Парсер Поставщики АОП v.9.7",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/obmen-dannyimi\/parser-postavschiki-aop",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/parser-aop-postavshiki1-220x220.jpg",
+            "price_new": "3 200 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Talosion Defense - Интеллектуальная защита вашего сайта от ботов и парсеров",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/bekapy\/talosion-defense-intellektualnaya-zaschita-vashego-sayta-ot-botov-i-parserov",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/banner12-220x220.png",
+            "price_new": "499 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Дополнение AI Content Generator к anyCSV\/XLS\/YML PRO для генерации товарных данных с помощью нейронок",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/obmen-dannyimi\/dopolnenie-ai-content-generator-k-anycsv-xls-yml-pro-dlya-generatsii-tovarnyih-dannyih-s-pomoschyu-neyronok",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/anycsv_ai-220x220.png",
+            "price_new": "1 090 ₽",
+            "price_old": "1 290 ₽",
+            "stickers": []
+        },
+        {
+            "name": "Simple Shortcoder (простые шорткоды)",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/vneshniy-vid\/simple-shortcoder-prostyie-shortkodyi",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/simple_shortcoder-220x220.png",
+            "price_new": "980 ₽",
+            "price_old": "1 390 ₽",
+            "stickers": []
+        },
+        {
+            "name": "Обновление Attribut&co до Attribut&pro",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/filtryi\/obnovlenie-attribut-co-do-attribut-pro",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/attributipro-main3-220x220.png",
+            "price_new": "750 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Поиск и скрытие вложенных полей в модулях",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/adminka\/poisk-i-skryitie-vlojennyih-poley-v-modulyah",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/screen_1-220x220.jpg",
+            "price_new": "бесплатно",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "MAX Уведомления",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/mail-sms\/max-uvedomleniya",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/artmax-220x220.jpg",
+            "price_new": "999 ₽",
+            "price_old": "1 490 ₽",
+            "stickers": []
+        },
+        {
+            "name": "Attribut&pro! Opencart. Атрибуты - новые возможности!",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/filtryi\/attribut-co%21-opencart-atributyi-eto-legko%21",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/attributipro-main2-220x220.png",
+            "price_new": "1 500 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Персональные данные и информация о cookie",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/adminka\/personalnyie-dannyie-i-informatsiya-o-cookie",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/live_personal_data_and_cookie-220x220.png",
+            "price_new": "1 800 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Персональные данные",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/vneshniy-vid\/personalnyie-dannyie",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/live_personal_data-220x220.png",
+            "price_new": "900 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "Модуль системы оплаты P2PKASSA",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/oplata\/modul-sistemyi-oplatyi-p2pkassa",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/banner-bg-220x220.png",
+            "price_new": "1 000 ₽",
+            "price_old": null,
+            "stickers": []
+        },
+        {
+            "name": "IMTabs (OC 2.3) - Дополнительные вкладки (табы) товара",
+            "url": "https:\/\/liveopencart.ru\/opencart-moduli-shablony\/moduli\/vneshniy-vid\/imtabs-oc-2-3-dopolnitelnyie-vkladki-tabyi-tovara",
+            "image": "https:\/\/liveopencart.ru\/image\/cache\/data\/products\/logo73-220x220.png",
+            "price_new": "900 ₽",
+            "price_old": null,
+            "stickers": []
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "status": "ok",
+    "products": [
+        {
+            "name": "SMS-уведомления от TeraSMS",
+            "url": "https:\/\/shop.opencart-russia.ru\/sms-uvedomleniya-ot-terasms",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/terasms\/terasms_main.jpg",
+            "price": "0р.",
+            "stickers": []
+        },
+        {
+            "name": "Онлайн AI консультант с ChatGPT - Бе..",
+            "url": "https:\/\/shop.opencart-russia.ru\/ai-bot-demo",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/ravilr\/aigpt\/aikons.jpeg",
+            "price": "0р.",
+            "stickers": []
+        },
+        {
+            "name": "Simple Shortcoder (простые шорткоды)..",
+            "url": "https:\/\/shop.opencart-russia.ru\/simple-shortcoder",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/venterdeveloper\/simple-shortcoder\/simple_shortcoder.png",
+            "price": "980р.",
+            "stickers": []
+        },
+        {
+            "name": "Additional Links Pro (дополнительные..",
+            "url": "https:\/\/shop.opencart-russia.ru\/additional-links-pro",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/venterdeveloper\/additional-links-pro\/additional_links_pro.png",
+            "price": "650р.",
+            "stickers": []
+        },
+        {
+            "name": "Уведомления о использовании cookie..",
+            "url": "https:\/\/shop.opencart-russia.ru\/cookie-module",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/ravilr\/cookie\/cookie.jpeg",
+            "price": "400р.",
+            "stickers": []
+        },
+        {
+            "name": "IMTabs (OC 2.3) - Дополнительные вкл..",
+            "url": "https:\/\/shop.opencart-russia.ru\/imtabs23",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/devimirochnik\/IMTabs(2.3)\/logo.png",
+            "price": "900р.",
+            "stickers": []
+        },
+        {
+            "name": "Счетчик количества символов meta tit..",
+            "url": "https:\/\/shop.opencart-russia.ru\/gr_characters_counter",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/grincognito\/GR-char-count\/gr-character-counter.jpg",
+            "price": "0р.",
+            "stickers": []
+        },
+        {
+            "name": "Ocsimple_filter - Расширенный фильтр..",
+            "url": "https:\/\/shop.opencart-russia.ru\/ocsimple-filter",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/vrndorog\/chad_84f375e0d1a94aaa82de67237ab65c9b.png",
+            "price": "3750р.",
+            "stickers": []
+        },
+        {
+            "name": "Модуль «Редактор заказа OrderEdit»..",
+            "url": "https:\/\/shop.opencart-russia.ru\/order-edit-module",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/brest001\/OrderEdit\/order_edit1.png",
+            "price": "900р.",
+            "stickers": []
+        },
+        {
+            "name": "Плитка тегов - модуль SEO Tag Tiles..",
+            "url": "https:\/\/shop.opencart-russia.ru\/plitka-tegov",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/akorvat\/SeoTagTiles\/SeoTagTiles.jpg",
+            "price": "1190р.",
+            "stickers": []
+        },
+        {
+            "name": "Простой экспорт заказов покупателей ..",
+            "url": "https:\/\/shop.opencart-russia.ru\/gr_simle_order_export",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/grincognito\/GR-simple-order-export\/simple-order-export.jpg",
+            "price": "390р.",
+            "stickers": []
+        },
+        {
+            "name": "Показ \/ скрытие блока в зависимости ..",
+            "url": "https:\/\/shop.opencart-russia.ru\/gr_module_position_fix",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/grincognito\/position-fix.jpg",
+            "price": "0р.",
+            "stickers": []
+        },
+        {
+            "name": "Список значений атрибутов. Предопред..",
+            "url": "https:\/\/shop.opencart-russia.ru\/attribute-list-values",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/blast\/attribute_list_values\/main.png",
+            "price": "350р.",
+            "stickers": []
+        },
+        {
+            "name": "IMCanSaleZeroProduct (OC 2.3) - Пред..",
+            "url": "https:\/\/shop.opencart-russia.ru\/imcansalezeroproduct23",
+            "image": "https:\/\/shop.opencart-russia.ru\/image\/data\/members\/devimirochnik\/IMCanSaleZeroProduct(2.3)\/logo.png",
+            "price": "1000р.",
+            "stickers": []
+        }
+    ]
+}
